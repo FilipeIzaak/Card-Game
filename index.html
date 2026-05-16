@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMPUS DO CAOS — TCG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=VT323&family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ladingBonito.css">
+
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+
+<!-- MODAL ERRO DO SISTEMA -->
+<div id="erro-modal">
+  <div class="erro-box">
+    <div class="erro-titulo">ERRO 403</div>
+    <div class="erro-codigo">// ACESSO_NEGADO :: MATRICULA_SUSPENSA</div>
+    <div class="erro-msg">"Sua matrícula foi interceptada pelo sistema Maho-Vilan.<br>Tentativas de reconexão foram bloqueadas pelo protocolo T.O.M.<br>Bem-vindo ao Purgatório dos Jubilados."</div>
+    <button class="erro-btn" onclick="document.getElementById('erro-modal').classList.remove('show')">IGNORAR E CONTINUAR</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">CAMPUS DO CAOS</div>
+  <div class="nav-links">
+    <a href="#faccoes">Facções</a>
+    <a href="#mecanicas">Mecânicas</a>
+    <a href="#lore">Lore</a>
+    <a href="jogar.html">Jogar</a>
+  </div>
+  <div class="nav-status">
+    <div class="status-dot"></div>
+    SISTEMA ONLINE
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    ⚠ ALERTA DO SISTEMA: O site da campus caiu novamente &nbsp;·&nbsp; 
+    CLOCK crítico: sua sanidade está em 3% &nbsp;·&nbsp; 
+    Maho-Vilan foi avistado na sala dos servidores &nbsp;·&nbsp; 
+    Novo terreno desbloqueado: "BATIDA POLICIAL NO LINO" &nbsp;·&nbsp; 
+    Calouro avistado tentando compilar Java sem IDE &nbsp;·&nbsp; 
+    Protocolo T.O.M. ativado — todos os notebooks foram confiscados &nbsp;·&nbsp; 
+    O Purgatório dos Jubilados registrou 847 novas almas esta semana &nbsp;·&nbsp; 
+    Mestre CASSIN lança patch de emergência: v0.0.3-alpha &nbsp;·&nbsp; 
+    OP em patrulha na ponte — velocidade máxima: 30km/h eternos &nbsp;·&nbsp;
+    AVISO: Nenhuma carteirada funciona no Campus do Caos &nbsp;·&nbsp;
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="scan-line"></div>
+  <div class="hero-eyebrow">// SISTEMA INICIALIZADO :: v1.0.0-CAOS</div>
+  <h1 class="hero-titulo" data-text="CAMPUS">
+    CAMPUS
+    <span class="linha-verde">DO CAOS</span>
+  </h1>
+  <p class="hero-subtitulo">Um TCG onde <span>o tempo é sua sanidade</span> e a burocracia é o vilão.</p>
+  <div class="hero-cta-group">
+    <a href="#jogar" class="btn-primary">JOGAR AGORA</a>
+    <a href="#faccoes" class="btn-secondary">VER FACÇÕES</a>
+  </div>
+  <div class="hero-dados">
+    <div class="hero-dado">
+      <span class="num">30</span>
+      <span class="lab">Cartas por Deck</span>
+    </div>
+    <div class="separador-v"></div>
+    <div class="hero-dado">
+      <span class="num">3</span>
+      <span class="lab">Facções</span>
+    </div>
+    <div class="separador-v"></div>
+    <div class="hero-dado">
+      <span class="num">∞</span>
+      <span class="lab">Loops Infinitos</span>
+    </div>
+    <div class="separador-v"></div>
+    <div class="hero-dado">
+      <span class="num">0</span>
+      <span class="lab">Bugs Resolvidos</span>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-verde">
+
+<!-- ══ TERMINAL LORE ══ -->
+<section style="max-width:860px;">
+  <div class="section-tag">// RELATÓRIO DO SISTEMA</div>
+  <div class="section-titulo">O <span class="accent">COLAPSO</span> <span class="corrupto">COMEÇA</span></div>
+  <div class="terminal-full">
+    <div class="terminal-bar">
+      <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+      <span>terminal@campus-do-caos:~</span>
+    </div>
+    <div class="terminal-body">
+      <div class="t-cmd">cat README_URGENTE.txt</div>
+      <div class="t-out">Bem-vindo ao Campus do Caos.</div>
+      <div class="t-out">Este não é um jogo. É uma simulação de sobrevivência acadêmica.</div>
+      <div class="t-out"></div>
+      <div class="t-cmd">ls -la /faccoes/</div>
+      <div class="t-out">drwxr-xr-x  resistencia/     [ATIVA]</div>
+      <div class="t-out">drwxr-xr-x  legiao_protocolo/ [DOMINANTE]</div>
+      <div class="t-err">drwx------  corrompidos/     [ACESSO NEGADO — INFECTADO]</div>
+      <div class="t-cmd">ping mestre-CASSIN.local</div>
+      <div class="t-warn">AVISO: Pacotes perdidos. Mestre CASSIN pode estar offline.</div>
+      <div class="t-warn">Última localização conhecida: Sala 204 — "Via dos Veteranos"</div>
+      <div class="t-cmd">./iniciar_jogo.sh --modo=sobrevivencia</div>
+      <div class="t-out">Embaralhando deck...</div>
+      <div class="t-out">Sorteando terreno inicial...</div>
+      <div class="t-err">ERRO: Vírus R.A.T.O.N. detectado no ambiente!</div>
+      <div class="t-out">Clock: 5 unidades restantes de sanidade.</div>
+      <div class="t-out">Boa sorte. Você vai precisar. <span style="animation:blink 1s infinite;display:inline-block">█</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FACÇÕES ══ -->
+<section id="faccoes">
+  <div class="section-tag">// FACCOES_DETECTADAS</div>
+  <div class="section-titulo">ESCOLHA<br>SUA <span class="accent">CORRUPÇÃO</span></div>
+  <div class="faccoes-grid">
+
+    <div class="faccao-card resistencia">
+      <div class="faccao-id">FAC-001</div>
+      <div class="faccao-icone">&gt;_</div>
+      <div class="faccao-nome">A RESISTÊNCIA</div>
+      <div class="faccao-lider">LIDER: MESTRE CASSIN</div>
+      <div class="faccao-desc">
+        Programadores que ainda acreditam em código limpo e documentação. 
+        Lutam contra o sistema corrompido com lógica, testes unitários e 
+        uma quantidade absurda de café. Seu quartel-general é a Sala 204, 
+        às margens da Via dos Veteranos.
+      </div>
+      <div class="faccao-poder">
+        <strong>// HABILIDADE PASSIVA</strong>
+        clean_code(): Cartas da Resistência ganham +1 ATK por carta no cemitério do oponente. O código limpo sobrevive ao caos.
+      </div>
+    </div>
+
+    <div class="faccao-card legiao">
+      <div class="faccao-id">FAC-002</div>
+      <div class="faccao-icone">T.O.M</div>
+      <div class="faccao-nome">LEGIÃO DO PROTOCOLO</div>
+      <div class="faccao-lider">LIDER: COMANDANTE T.O.M.</div>
+      <div class="faccao-desc">
+        O Sistema. A Burocracia. O formulário que nunca fecha no portal. 
+        Comandados pelo antagonista Maho-Vilan, representam tudo que 
+        impede o aluno de se formar: travas, protocolos, pré-requisitos 
+        impossíveis e WiFi que cai na prova.
+      </div>
+      <div class="faccao-poder">
+        <strong>// HABILIDADE PASSIVA</strong>
+        buffer_overflow(): Sempre que o oponente jogar uma carta, role 1d6. Com 1-2, a carta retorna à mão. "Sistema indisponível."
+      </div>
+    </div>
+
+    <div class="faccao-card corrompidos">
+      <div class="faccao-id">FAC-003</div>
+      <div class="faccao-icone">R.A.T</div>
+      <div class="faccao-nome">OS CORROMPIDOS</div>
+      <div class="faccao-lider">LIDER: CASSIN [INFECTADO]</div>
+      <div class="faccao-desc">
+        Eram aliados. Agora são o vírus. Professores e veteranos infectados 
+        pelo Vírus R.A.T.O.N., que transforma a frustração acadêmica em 
+        crueldade sistemática. CASSIN foi o primeiro a cair: "Você nunca 
+        será um programador de verdade!"
+      </div>
+      <div class="faccao-poder">
+        <strong>// HABILIDADE PASSIVA</strong>
+        imposter_syndrome(): Ao atacar um calouro (nível BASE), causa o dobro do dano. A hierarquia do trauma é a principal arma.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CARTA DESTAQUE ══ -->
+<section style="padding-top:0;">
+  <div class="carta-destaque-section">
+    <div class="carta-visual">
+      <div class="carta-v-nivel">NÍVEL: CORROMPIDO · FACÇÃO: OS CORROMPIDOS</div>
+      <div class="carta-v-nome">MESTRE CASSIN</div>
+      <div class="carta-v-subtitulo">// "VOCÊ NUNCA SERÁ REAL"</div>
+      <div class="carta-v-art">
+        <div class="carta-v-art-txt">404</div>
+      </div>
+      <div class="carta-v-texto">"Antes ele ensinava com paciência. Depois do Vírus R.A.T.O.N., só leciona humilhação em O(n²)."</div>
+      <div class="carta-v-stats">
+        <div class="carta-v-stat atk"><div class="sv">9</div><div class="sl">ATK</div></div>
+        <div class="carta-v-stat hp"><div class="sv">4</div><div class="sl">HP</div></div>
+        <div class="carta-v-stat custo"><div class="sv">6</div><div class="sl">CLOCK</div></div>
+      </div>
+    </div>
+
+    <div class="carta-info">
+      <div class="carta-info-titulo">CARTA EM<br><span class="acc">DESTAQUE</span></div>
+      <div class="carta-info-desc">
+        CASSIN CASSINO era o melhor aluno da Resistência.<br>
+        Após 3 semanas tentando configurar o ambiente de desenvolvimento sem acesso root, 
+        o Vírus R.A.T.O.N. encontrou uma brecha em sua sanidade.
+      </div>
+      <div class="habilidade">
+        <div class="habilidade-nome">SYNTAX_ERROR()</div>
+        <div class="habilidade-desc">Ao entrar no campo, force o oponente a descartar 2 cartas e mostrar a mão. "Sem documentação? Volta pro Word."</div>
+        <div class="habilidade-custo">Custo: 2 Clock · Tipo: Entrada · Alcance: Global</div>
+      </div>
+      <div class="habilidade">
+        <div class="habilidade-nome">DEPRECATION_WARNING()</div>
+        <div class="habilidade-desc">Reduz o ATK de todas as cartas BASE do oponente em 2. Stacks com outras habilidades de debuff. O elitismo como mecânica de jogo.</div>
+        <div class="habilidade-custo">Custo: 3 Clock · Tipo: Passiva · Duração: Permanente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MECÂNICAS ══ -->
+<section id="mecanicas" style="background:var(--concreto-medio);max-width:100%;padding:100px 80px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-tag">// DOCUMENTACAO_DO_SISTEMA</div>
+    <div class="section-titulo">MECÂNICAS<br><span class="accent">DO CAOS</span></div>
+    <div class="mecanicas-grid">
+
+      <div class="mecanica-item">
+        <div class="mecanica-num">01</div>
+        <div>
+          <div class="mecanica-titulo">CLOCK (MANA)</div>
+          <div class="mecanica-desc">Tempo é o recurso. Cada ação custa segundos da sua sanidade acadêmica. Atacar custa 1 Clock. Jogar cartas custa o custo impresso. No início de cada turno você recebe +1 Clock e a realidade piora um pouco mais.</div>
+          <div class="mecanica-codigo">
+            sanidade.consume(1);<br>
+            if (clock &lt;= 0) { status = "JUBILADO"; }
+          </div>
+        </div>
+      </div>
+
+      <div class="mecanica-item">
+        <div class="mecanica-num">02</div>
+        <div>
+          <div class="mecanica-titulo">TRILHA DE EVOLUÇÃO</div>
+          <div class="mecanica-desc">Calouros evoluem. A questão é: para onde? A trilha determina se um personagem se torna herói ou vilão. CASSIN era Calouro de Resistência. Veja no que deu. Evolua sobre a carta anterior no campo.</div>
+          <div class="mecanica-codigo">
+            if (trauma &gt;= threshold) {<br>
+            &nbsp;&nbsp;faction = "CORROMPIDOS";<br>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="mecanica-item">
+        <div class="mecanica-num">03</div>
+        <div>
+          <div class="mecanica-titulo">TERRENOS DINÂMICOS</div>
+          <div class="mecanica-desc">O campo muda a cada partida. Terrenos dão buff para uma facção e nerf em outra, ou bônus por nível de carta. O Campus nunca é o mesmo. Exceto o WiFi. O WiFi sempre cai.</div>
+          <div class="mecanica-codigo">
+            terreno = randomize(listaTerrenos);<br>
+            aplicarBuffNerf(facção, nível);
+          </div>
+        </div>
+      </div>
+
+      <div class="mecanica-item">
+        <div class="mecanica-num">04</div>
+        <div>
+          <div class="mecanica-titulo">ATAQUE DIRETO</div>
+          <div class="mecanica-desc">Sem cartas na mão? Sem defesa? O oponente ataca sua vida diretamente. O jogo simula perfeitamente a sensação de ter esquecido de estudar para a P2. Vida inicial: 10. Fim de jogo: 0.</div>
+          <div class="mecanica-codigo">
+            if (minha_mao.length === 0) {<br>
+            &nbsp;&nbsp;vida -= dano_direto;<br>
+            }
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TERRENOS ══ -->
+<section id="lore">
+  <div class="section-tag">// MAPA_DO_CAMPUS</div>
+  <div class="section-titulo">LOCAIS DA<br><span class="accent">VIA DOS VETERANOS</span></div>
+  <div class="terrenos-grid">
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">AMAZON campus</div>
+        <div class="terreno-tipo">TERRENO · CORPORATIVO</div>
+      </div>
+      <div class="terreno-efeito">Exército +2 ATK / Resistência -2 ATK</div>
+      <div class="terreno-desc">O data center do Campus. Servidores que aquecem a sala no inverno e derrubam o site no verão. Território do Protocolo T.O.M., onde os processos rodam em produção sem staging. Um erro aqui afeta a todos.</div>
+    </div>
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">PURGATÓRIO DOS JUBILADOS</div>
+        <div class="terreno-tipo">TERRENO · DIMENSIONAL</div>
+      </div>
+      <div class="terreno-efeito">Jubilados ignoram custo de Clock ao atacar</div>
+      <div class="terreno-desc">Um supermercado infinito no limite da Via dos Veteranos. Alunos jubilados ficam presos aqui em loop eterno, varrendo corredores entre Produtos de Limpeza e Disciplinas Reprovadas. A BGM é um loop de 8 bits que nunca termina.</div>
+    </div>
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">PONTE DA TRAVESSIA</div>
+        <div class="terreno-tipo">TERRENO · ÉPICO</div>
+      </div>
+      <div class="terreno-efeito">OP +3 ATK / Calouros não podem atacar</div>
+      <div class="terreno-desc">A ponte quilométrica que leva aos portões da campus. O OP a patrulha 24h. Só chegar até aqui já é uma prova. A névoa abaixo esconde o que acontece com quem tenta cortar caminho. Ninguém fala sobre a névoa.</div>
+    </div>
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">CAMPUS CENTRAL</div>
+        <div class="terreno-tipo">TERRENO · BASE</div>
+      </div>
+      <div class="terreno-efeito">Calouros +1 ATK / Veteranos e Jubilados -1 ATK</div>
+      <div class="terreno-desc">O coração pulsante do caos. Salas com cadeiras quebradas, projetores de 2004 e um WiFi que conecta ocasionalmente se você ficar em pé no canto esquerdo da sala. Território neutro que favorece quem ainda tem esperança.</div>
+    </div>
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">PORTÃO DO OP</div>
+        <div class="terreno-tipo">TERRENO · REPRESSIVO</div>
+      </div>
+      <div class="terreno-efeito">Veteranos +1 ATK / Calouros e Jubilados -1 ATK</div>
+      <div class="terreno-desc">O checkpoinkpoint burocrático. Cada entrada registrada. Cada saída monitorada. O Comandante T.O.M. instalou câmeras que funcionam melhor do que qualquer sistema acadêmico. Aqui o protocolo é lei.</div>
+    </div>
+
+    <div class="terreno-card">
+      <div class="terreno-header">
+        <div class="terreno-nome">SALA DOS SERVIDORES</div>
+        <div class="terreno-tipo">TERRENO · CORROMPIDO</div>
+      </div>
+      <div class="terreno-efeito">Corrompidos imunes a nerf / Todo terreno sorteia efeito extra</div>
+      <div class="terreno-desc">Onde o Vírus R.A.T.O.N. reside. Temperatura: 45°C. Ventilação: nenhuma. O barulho dos HDs é o único som. Maho-Vilan foi visto aqui pela última vez antes de sumir nos logs do sistema. Acesso: proibido. Curiosidade: inevitável.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<div class="cta-final" id="jogar">
+  <div class="cta-titulo">
+    ENTRE NO<br>
+    <span class="verde">CAMPUS</span>
+  </div>
+  <div class="cta-subtitulo">// SE VOCÊ ESTÁ LENDO ISSO, JÁ FOI MATRICULADO</div>
+  <div class="form-email">
+    <input type="email" placeholder="seu.email@xxxxx.com" />
+    <button onclick="document.getElementById('erro-modal').classList.add('show')">MATRICULAR</button>
+  </div>
+  <div class="cta-disclaimer">* Ao se matricular, você aceita perder sua sanidade, seus fins de semana e a noção de tempo. <br>O Campus do Caos não se responsabiliza por jubilamentos acidentais.</div>
+</div>
+
+<footer>
+  <div class="footer-logo">CAMPUS DO CAOS</div>
+  <div>TCG · VERSÃO ALPHA · TODOS OS BUGS SÃO FEATURES</div>
+  <div>© 2024 — PROJETO INDEPENDENTE DE FICÇÃO E SÁTIRA.</div>
+</footer>
+
+<script>
+// ── MATRIX CANVAS ──
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ∞∆∇⊕⊗∈∉ABCDEFGHIJKLMNOPQRSTUVWXYZerroobugglitchcaos';const fontSize = 13;
+const cols = Math.floor(canvas.width / fontSize);
+const drops = Array(cols).fill(1);
+
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(5,10,5,0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff41';
+  ctx.font = fontSize + 'px Share Tech Mono';
+  drops.forEach((y, i) => {
+    const char = chars[Math.floor(Math.random() * chars.length)];
+    ctx.fillText(char, i * fontSize, y * fontSize);
+    if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  });
+}
+setInterval(drawMatrix, 60);
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// ── EFEITO DE GLITCH ALEATÓRIO ──
+setInterval(() => {
+  if (Math.random() < 0.15) {
+    document.body.style.transform = 'skew(' + (Math.random() * 0.5 - 0.25) + 'deg)';
+    setTimeout(() => { document.body.style.transform = ''; }, 80);
+  }
+}, 3000);
+</script>
+</body>
+</html>

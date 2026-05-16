@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPUS DO CAOS — TCG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Bebas+Neue&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bonito.css">
+</head>
+<body>
+
+<!-- NOTIFICAÇÃO FLUTUANTE -->
+<div id="notificacao"></div>
+
+<!-- TICKER INFERIOR -->
+<div class="ticker">
+    <span class="ticker-inner">
+        ⚠ VÍRUS R.A.T.O.N. ATIVO &nbsp;·&nbsp;
+        MATRÍCULA ENCERRADA &nbsp;·&nbsp;
+        O SITE CAIU &nbsp;·&nbsp;
+        BATIDA POLICIAL NO LINO &nbsp;·&nbsp;
+        VOCÊ NUNCA SERÁ UM PROGRAMADOR DE VERDADE &nbsp;·&nbsp;
+        GOE ATIVADO — VIA DOS VETERANOS BLOQUEADA &nbsp;·&nbsp;
+        SEU TCC NÃO FOI ENCONTRADO &nbsp;·&nbsp;
+        PURGATÓRIO DOS JUBILADOS: FILA INFINITA &nbsp;·&nbsp;
+        SATORU ONLINE — ELITISMO DETECTADO &nbsp;·&nbsp;
+        MAHO-VILAN MANIFESTO &nbsp;·&nbsp;
+    </span>
+</div>
+
+<!-- ══ MESA ══ -->
+<div class="mesa-container">
+
+    <!-- ══ COLUNA ESQUERDA ══ -->
+    <aside class="coluna-lateral">
+
+        <div class="moldura-box" id="stacks-area">
+            <div class="titulo-box">STACKS</div>
+            <div id="deck-visual">
+                <span style="color:var(--verde-dim);font-size:9px;letter-spacing:2px">BARALHO<br>30 CARTAS</span>
+            </div>
+        </div>
+
+        <div class="moldura-box guia-rapido">
+            <div class="titulo-box">GUIA RÁPIDO</div>
+            <p>♥ Vida: 30 HP cada jogador</p>
+            <p>🃏 Início: 5 cartas na mão</p>
+            <p>⧗ Todo turno: +Clock · +2 Cartas</p>
+            <p>⚔ Ataque: 1x por carta por turno</p>
+            <p>▲ Evoluir: BASE → ESTAGIO 1 → HERÓI</p>
+            <p>🌍 Terreno muda a cada 3 turnos</p>
+            <small>⚠ Sem bloqueadores: dano direto ao HP!</small>
+        </div>
+
+    </aside>
+
+    <!-- ══ COLUNA CENTRAL ══ -->
+    <main class="coluna-central">
+
+        <header>
+            <h1>CAMPUS DO CAOS</h1>
+            <p>— TCG · 30 CARTAS POR DECK · BATALHA DE TURNOS —</p>
+        </header>
+
+        <!-- Mão do inimigo (verso) -->
+        <div id="mao-inimigo"></div>
+
+        <!-- Campo inimigo -->
+        <div id="campo-inimigo" class="area-batalha inimigo-area">
+            <span class="label-area">CARTAS NO CAMPO — INIMIGO</span>
+        </div>
+
+        <!-- Divisor central -->
+        <div class="divisor-central"></div>
+
+        <!-- Campo do jogador -->
+        <div id="campo-batalha" class="area-batalha jogador-area">
+            <span class="label-area">SEU CAMPO — clique para atacar</span>
+        </div>
+
+        <!-- Mão + botão -->
+        <div class="area-inferior">
+            <div id="minha-mao"></div>
+            <button id="btnPassar" onclick="passarTurno()">PASSAR<br>TURNO</button>
+        </div>
+
+    </main>
+
+    <!-- ══ COLUNA DIREITA ══ -->
+    <aside class="coluna-lateral">
+
+        <!-- Terreno -->
+        <div class="moldura-box" id="terreno-display">
+            <div class="titulo-box">TERRENO ATIVO</div>
+            <span id="nomeTerreno">Sorteando...</span>
+            <br><small id="efeitoTerreno"></small>
+        </div>
+
+        <!-- Pilha / Log -->
+        <div class="moldura-box">
+            <div class="titulo-box">LOG DE COMBATE</div>
+            <div class="pilha-visual">
+                <div class="pilha-carta"></div>
+                <div class="pilha-carta"></div>
+                <div class="pilha-carta"></div>
+            </div>
+            <div id="log-combate"></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="status-vertical">
+            <div class="stat-card oponente">
+                <label>HP OPONENTE</label>
+                <span class="stat-value" id="vidaInimigo">30</span>
+            </div>
+            <div class="stat-card jogador">
+                <label>SEU HP</label>
+                <span class="stat-value" id="minhaVida">30</span>
+            </div>
+            <div class="stat-card clock">
+                <label>⧗ CLOCK</label>
+                <span class="stat-value" id="meuClock">4</span>
+            </div>
+        </div>
+
+        <!-- Descarte -->
+        <div class="moldura-box descarte">
+            <div class="titulo-box">DESCARTE</div>
+            <div class="pilha-visual">
+                <div class="pilha-carta" style="opacity:0.2"></div>
+            </div>
+        </div>
+
+    </aside>
+</div>
+
+<script src="cartas.js"></script>
+<script src="terrenos.js"></script>
+<script src="interface.js"></script>
+<script src="logica.js"></script>
+
+</body>
+</html>
